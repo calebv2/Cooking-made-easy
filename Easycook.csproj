@@ -1,0 +1,52 @@
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AssemblyName>Easycook</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Easycook</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GamePath Condition="'$(GamePath)' == ''">/home/ATT/a-township-container/game-source</GamePath>
+    <OutputPath>bin/Release/</OutputPath>
+    <IntermediateOutputPath>obj/Release/</IntermediateOutputPath>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MelonLoader">
+      <HintPath>$(GamePath)/MelonLoader/net35/MelonLoader.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(GamePath)/MelonLoader/net35/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Root.Township">
+      <HintPath>$(GamePath)/A Township Tale_Data/Managed/Root.Township.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Alta.Build">
+      <HintPath>$(GamePath)/A Township Tale_Data/Managed/Alta.Build.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Alta.Values">
+      <HintPath>$(GamePath)/A Township Tale_Data/Managed/Alta.Values.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GamePath)/A Township Tale_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="CustomRecipesAPI">
+      <HintPath>$(GamePath)/Mods/CustomRecipesAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.cs" />
+    <Compile Include="ForgeOutputCollection.cs" />
+    <Compile Include="SmelterRecipeRegistration.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)/Microsoft.CSharp.targets" />
+</Project>
